@@ -48,17 +48,11 @@ img {
     clear: both;
     float: right;
 }
-.test {
-    float: left;
-    d
-
-}
-.omelette {
-    clear: left;
-    float: left;
-}
-.poached {
-    clear: left;
+p {
+    font-family: monospace;
+    font-size: 22px;
+    margin-left: 30px;
+    width: 600px;
 }
 hr {
     background-color: rebeccapurple;
