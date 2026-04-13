@@ -34,6 +34,11 @@ h3 {
     margin: 30px;
     width: 95%;
 }
+p {
+    font-family: monospace;
+    font-size: 22px;
+    margin: 30px;
+}
 .websites {
     margin: 30px;
     width: 1250px;
@@ -43,15 +48,12 @@ img {
     height: 400px;
     border: solid plum 5px;
     border-radius: 30px;
-    margin-bottom: 30px;
-    margin-right: 60px;
+    margin: 30px;
     clear: both;
     float: right;
 }
 .test {
-    float: left;
-    d
-
+    float: right;
 }
 .omelette {
     clear: left;
@@ -98,4 +100,13 @@ a {
 }
 .navbar li {
     float: left;
+}
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: plum;
 }
