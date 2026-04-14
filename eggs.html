@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Sunny-side up eggs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    
+
    
 </head>
 <body>
     <!--this is my heading!-->
-    <h1>Sunny-side up egg recipe</h1>
+    <h1 class="sunny-h1">Sunny-side up egg recipe</h1>
     <p>Sunny-side-up eggs are eggs only cooked on one side, leaving the 
         yolk intact and runny. The dish is said to resemble the shining sun.
 </p>
 <input type="button" onclick="alert('Beginner friendly recipe. Estimated time: 10 minutes')" value="extra info">
-<h3>Ingredients</h3>
-<ul>
+
+<h3>Ingredients/equipment</h3>
+<ul class="ingredients">
     <li>butter</li>
     <li>1 fresh egg</li>
     <li>seasoning of choice</li>
     <li>nonstick pan</li>
 </ul>
 
-<img src="image/download.jpeg" alt="butter pic" style="width:128px;height:128px;">
+<img class="butter" src="image/download.jpeg" alt="butter pic" style="width:128px;height:128px;">
 
 <h2>Instructions</h2>
 <ol>
@@ -42,10 +46,6 @@
 
 <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
 
-<script>
-function myFunction(x) {
-  x.classList.toggle("fa-thumbs-down");
-}
-</script>
+
 </body>
 </html>

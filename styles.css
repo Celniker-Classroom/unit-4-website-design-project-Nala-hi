@@ -102,11 +102,22 @@ a {
     float: left;
 }
 .fa {
-  font-size: 50px;
-  cursor: pointer;
-  user-select: none;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 30px;
 }
 
 .fa:hover {
   color: plum;
 }
+.ingredients {
+    font-family: cursive;
+    font-size: 25px;
+    margin: 30px;
+}
+.butter {
+    
+}
+
+
