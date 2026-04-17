@@ -5,10 +5,6 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-
-    
-
-   
 </head>
 <body>
     <!--this is my heading!-->
@@ -17,19 +13,17 @@
         yolk intact and runny. The dish is said to resemble the shining sun.
 </p>
 <input type="button" onclick="alert('Beginner friendly recipe. Estimated time: 10 minutes')" value="extra info">
-
+<img src="image/download.jpeg" alt="butter pic">
 <h3>Ingredients/equipment</h3>
-<ul class="ingredients">
+<ul>
     <li>butter</li>
     <li>1 fresh egg</li>
     <li>seasoning of choice</li>
     <li>nonstick pan</li>
 </ul>
-
-<img class="butter" src="image/download.jpeg" alt="butter pic" style="width:128px;height:128px;">
-
+<img src="image/raw-egg.png" alt="cracked raw egg">
 <h2>Instructions</h2>
-<ol>
+<ol class="sunny-instructions">
     <li>Heat up and distribute butter on the pan on med-high heat for a couple minutes. 
         Crack a large egg into a separate bowl.</li>
     <br>
@@ -38,14 +32,15 @@
     <br>
     <li>Slide the eggs out the pan, season with salt and ground pepper, and serve.</li>
 </ol>
-<img src="image/Sunny eggs.jpg" alt="sunny-side pic" style="width:200px;height:150px;">
-   <br>
+<div class="img-magnifier-container">
+    <img id="myimage" src="image/Sunny eggs.jpg" alt="sunny-side pic">
+</div>
+    <br>
 <a href="index.html">Back to home page</a>
 
 <p>Did you like this recipe?</p>
 
 <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
-
 
 </body>
 </html>

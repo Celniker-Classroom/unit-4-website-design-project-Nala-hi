@@ -1,12 +1,17 @@
 /* Add Global styles here */
 body {
     background-color: lightcyan;
-    color: purple
+    color: purple;
+    font-family: cursive;
+}
+.omelette-subpage {
+    background-color: lavenderblush;
+    color: purple;
+    font-family: cursive;
 }
 h1 {
     margin: 30px;
-    font-family: cursive;
-    border: solid 2px plum;
+    border: solid 3px rgb(255, 192, 227);
     padding: 9px;
     border-radius: 10px;
     display: inline-block;
@@ -22,8 +27,11 @@ h2 {
     display: inline-block;
     background-color: rgb(255, 255, 231);
 }
+.omelette-h2 {
+    border: dotted 3px ;
+    background-color:azure;
+}
 h3 {
-    font-family: cursive;
     font-size: 25px;
     text-decoration: underline;
     margin: 30px;
@@ -52,11 +60,11 @@ img {
     clear: both;
     float: right;
 }
-.test {
-    float: right;
+
+.desc {
+    float: left;
 }
 .omelette {
-    clear: left;
     float: left;
 }
 .poached {
@@ -109,15 +117,38 @@ a {
 }
 
 .fa:hover {
-  color: plum;
+    color: plum;
 }
 .ingredients {
-    font-family: cursive;
     font-size: 25px;
     margin: 30px;
-}
-.butter {
     
 }
+* {box-sizing: border-box;}
 
+.img-magnifier-container {
+  position: relative;
+}
 
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+.sunny-instructions {
+    font-size: 23px;
+    margin: 30px;
+}
+table, th, td {
+    padding: 5px;
+    font-size: 23px;
+    border: solid  rgb(255, 192, 227) 2px;
+    border-collapse: collapse;
+    margin: 30px;
+    width: auto;
+    background-color: white;
+}
