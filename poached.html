@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <title>Poached Eggs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
    
 </head>
-<body>
+<body class="poached-body">
     <!--this is my heading!-->
     <h1>Poached Egg Recipe</h1>
     <p>Poached eggs are delicately cooked to achieve firm whites and a runny yolk. I promise 
@@ -13,6 +14,7 @@
     the technique. A poached egg is perfect to eat by itself or in addition to toast, egg 
     benedicts, salad, and other dishes, to spice up your breakfast. Yum!
 </p>
+<input type="button" class=info-button onclick="alert('Mostly beginner friendly recipe. Estimated time: 20 minutes')" value="extra info">
 <h3>Ingredients/equipment</h3>
 <ul>
     <li>butter</li>
@@ -25,13 +27,18 @@
 
 <h2>Instructions</h2>
 <ol>
-    <li>Heat up and distribute butter on the pan on med-high heat for a couple minutes. 
-        Crack a large egg into a separate bowl.</li>
-    <li>Slide the egg into the pan on med-low heat and immediate cover with a lid. 
-        Cook without disturbing the eggs until the whites are set (2-3 minutes).</li>
-    <li>Slide the eggs out the pan, season with salt and ground pepper, and serve.</li>
+    <li>Bring a large pot of water to a boil before turning the heat back to low.</li>  
+    <li>Crack an egg into a mesh strainer to strain out the liquidy part of the white, and place the rest of the egg in a bowl.</li>
+    <li>Add 1 tablespoon of vinegar into the water and stir to create a vortex</li>
+    <li>Quickly and gently slide the egg into the vortex. Cook for three minutes before taking the egg out with a ladle</li>
+    <li>Pat the egg dry with a paper towel and serve.</li>
 </ol>
 <img src="image/Sunny eggs.jpg" alt="sunny-side pic" style="width:200px;height:150px;">
    <br><a href="index.html">Back to home page</a>
+
+<p>Did you like this recipe?</p>
+
+<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+
 </body>
 </html>
