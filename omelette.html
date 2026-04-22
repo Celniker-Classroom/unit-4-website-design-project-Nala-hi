@@ -1,70 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-</head>
-<body class="omelette-body">
+    <style>
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position:relative;
+}
+.img-magnifier-container img {
+  float: none;
+}
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid plum;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+</style>
+<script>
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+  /*create magnifier glass:*/
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+  /*insert magnifier glass:*/
+  img.parentElement.insertBefore(glass, img);
+  /*set background properties for the magnifier glass:*/
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+  /*execute a function when someone moves the magnifier glass over the image:*/
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+  /*and also for touch screens:*/
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+  function moveMagnifier(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    /*prevent the magnifier glass from being positioned outside the image:*/
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    /*set the position of the magnifier glass:*/
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    /*display what the magnifier glass "sees":*/
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+  </head>
+  <body class="omelette-body">
     <!--this is my heading!-->
     <h1 >Omelette Recipe</h1>
-    <p>Omelettes are an incredibly personalizable and delicious dish. 
-      They can be stuffed with any ingredients you wish, to fit many 
-      different palettes. There are several different omelette variations 
-      to explore. This recipe will walk you through the steps to cook a 
-      quick and easy american-style omelette.
-</p>
-<input type="button" class=info-button onclick="alert('Mostly beginner friendly recipe. Estimated time: 20 minutes')" value="extra info">
-
-<table style="width:70%">
-  <tr>
-    <th>ingredients</th>
-    <th>equipment</th> 
-  </tr>
-  <tr>
-    <td>1 cup mixed vegetables and/or meat.</td>
-    <td>8" nonstick pan</td>
-  </tr>
-  <tr>
-    <td>2 large eggs</td>
-    <td>spatula</td>
-  </tr>
-  <tr>
-    <td>1/2 tablespoon butter</td>
-    <td>whisk</td>
-  </tr>
-  <tr>
-    <td>any cheese</td>
-    <td>sizable bowl</td>
-  </tr>
-</table>
-
-
-<h2 class="omelette-h2">Instructions</h2>
-<ol>
-    <li>Prepare and dice one cup of your favorite vegetables and/or cooked meat
-    (or other fillings too!), then set your filling aside.</li>
-    <img class="omelette-img" src="image/filling.jpg" alt="omelette fillings">
-    <li>Crack your eggs into a bowl and whisk until the whites and yolks are fully combined. 
-    Whisk in a pinch salt and pepper.</li>
-    <img class="omelette-img" src="image/whisked eggs.webp" alt="whisk eggs step">
-    <li>Melt butter over the pan before pouring in the eggs. Swirl the egg mixture over the 
-    pan to form an even layer.</li>
+    <p>Omelettes are an incredibly personalizable and delicious dish. They can be 
+    stuffed with any ingredients you wish, to fit many different palettes. There 
+    are several different omelette variations to explore. This recipe will walk 
+    you through the steps to cook a quick and easy american-style omelette.</p>
+    <input type="button" class=info-button onclick="alert('Mostly beginner friendly recipe. Estimated time: 20 minutes')" value="extra info">
+    <table style="width:70%">
+      <tr>
+        <th>ingredients</th>
+        <th>equipment</th> 
+      </tr>
+      <tr>
+        <td>1 cup mixed vegetables and/or meat.</td>
+        <td>8" nonstick pan</td>
+      </tr>
+      <tr>
+        <td>2 large eggs</td>
+        <td>spatula</td>
+      </tr>
+      <tr>
+        <td>1/2 tablespoon butter</td>
+        <td>whisk</td>
+      </tr>
+      <tr>
+        <td>any cheese</td>
+        <td>sizable bowl</td>
+      </tr>
+    </table>
+    <h2 class="omelette-h2">Instructions</h2>
+    <ol>
+      <li>Prepare and dice one cup of your favorite vegetables and/or cooked meat
+      (or other fillings too!), then set your filling aside.</li>
+      <img class="omelette-img" src="image/filling.jpg" alt="omelette fillings">
+      <li>Crack your eggs into a bowl and whisk until the whites and yolks are fully combined. 
+      Whisk in a pinch salt and pepper.</li>
+      <img class="omelette-img" src="image/whisked eggs.webp" alt="whisk eggs step">
+      <li>Melt butter over the pan before pouring in the eggs. Swirl the egg mixture over the 
+      pan to form an even layer.</li>
+      <br>
+      <li>On medium-low heat, cover the pan with a lid until the edges of the eggs start to set. 
+      Then, gently push the edges with a spatula and swirl the pan again so the raw egg in the middle reaches the edges to cook.</li>
+      <img class="omelette-img" src="image/omelette edges.jpg" alt="cook omelette">
+      <li>After about 5 minutes or until the omelette is almost completely set, flip it over and
+      cover the omelette with cheese to taste. Place your prepared filling on one half of the surface.</li>
+      <img class="omelette-img" src="image/add filling.jpg" alt="add filling">
+      <li>Fold the omelette down the middle with a spatula, and the dish is finished. Bon appetit!</li>
+    </ol>
+    <div class="img-magnifier-container">
+      <img id="myimage" src="image/omeletterec.jpeg" alt="2nd omelette pic">
+    </div>
     <br>
-    <li>On medium-low heat, cover the pan with a lid until the edges of the eggs start to set. 
-    Then, gently push the edges with a spatula and swirl the pan again so the raw egg in the middle reaches the edges to cook.</li>
-    <img class="omelette-img" src="image/omelette edges.jpg" alt="cook omelette">
-    <li>After about 5 minutes or until the omelette is almost completely set, flip it over and
-    cover the omelette with cheese to taste. Place your prepared filling on one half of the surface.</li>
-    <img class="omelette-img" src="image/add filling.jpg" alt="add filling">
-    <li>Fold the omelette down the middle with a spatula, and the dish is finished. Bon appetit!</li>
-</ol>
-<img src="image/omeletterec.jpeg" alt="2nd omelette pic">
-   <br><a href="index.html">Back to home page</a>
-   
-<p>Did you like this recipe?</p>
+    <a href="index.html">Back to home page</a> 
+    <p>Did you like this recipe?</p>
+    <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+    <script>
+/* Initiate Magnify Function
+with the id of the image, and the strength of the magnifier glass:*/
+magnify("myimage", 3);
+</script>
 
-<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
-
-</body>
+  </body>
 </html>

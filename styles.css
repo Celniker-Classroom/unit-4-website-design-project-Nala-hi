@@ -7,16 +7,23 @@ body {
 .omelette-body {
     background-color: lavenderblush;
     font-family: cursive;
+    border: dashed plum 3px;
+    border-radius: 15px;
 }
 .sunny-body {
-    background-color: lemonchiffon;
+    background-color: cornsilk;
+    border: dashed plum 3px;
+    border-radius: 15px;
 }
 .poached-body {
-    background-color: rgb(223, 253, 230)
+    background-color: rgb(223, 253, 230);
+    border: dashed plum 3px;
+    border-radius: 15px;
 }
 h1 {
     margin: 30px;
-    border: solid 3px plum;
+    border: solid plum;
+    border-width: 3px;
     padding: 9px;
     border-radius: 10px;
     display: inline-block;
@@ -36,14 +43,25 @@ h2 {
 .sunny-h2 {
     display: block;
     width: fit-content;
+    border-color: plum;
+    background-color: white;
 }
 .omelette-h2 {
     border: dashed 3px rgb(255, 192, 227);
     background-color:white;
 }
+.poached-h2 {
+    border: dashed plum 3px;
+    background-color: azure;
+}
 h3 {
     font-size: 25px;
     text-decoration: underline;
+    margin: 30px;
+}
+p {
+    font-family: monospace;
+    font-size: 22px;
     margin: 30px;
 }
 .intro {
@@ -51,11 +69,6 @@ h3 {
     font-size: 22px;
     margin: 30px;
     width: 95%;
-}
-p {
-    font-family: monospace;
-    font-size: 22px;
-    margin: 30px;
 }
 .websites {
     margin: 30px;
@@ -71,15 +84,56 @@ img {
     float: right;
 }
 .sunny-img {
+    float: right;
+}
+.sunny-img img {
+    clear: none;
+    height: 300px;
+}
+.shaker-img {
+    border: none;
+    width: fit-content;
+}
+.sunny-img2 {
     float: none;
-    width: 40%;
-    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.sunny-img2 img {
+    border-color: rgb(242, 224, 132);
+    width: 30%;
+    height: 250px;
+    margin-left: 0;
+    margin-right: 0;
 }
 .omelette-img {
     float: none;
     width: fit-content;
 }
-.desc {
+.poached-img {
+    width: fit-content;
+    border-color: lightblue;
+}
+.poaching-eggs {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.poaching-eggs img {
+    margin: 0;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-color: lightblue;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.sunny {
     float: left;
 }
 .omelette {
@@ -103,6 +157,15 @@ a {
 ol {
     font-size: 20px;
     margin: 30px;
+}
+.sunny-ol {
+    font-size: 23px;
+    margin: 30px;
+}
+ul {
+    font-size: 23px;
+    margin: 30px;
+    display: inline-block;
 }
 .info-button {
     background-color: azure;
@@ -145,19 +208,11 @@ ol {
     cursor: pointer;
     user-select: none;
     margin-left: 30px;
+    margin-bottom: 30px;
 }
 
 .fa:hover {
     color: plum;
-}
-.ingredients {
-    font-size: 25px;
-    margin: 30px;
-    
-}
-.sunny-instructions {
-    font-size: 23px;
-    margin: 30px;
 }
 table, th, td {
     padding: 5px;
